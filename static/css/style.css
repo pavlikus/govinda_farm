@@ -1,0 +1,27 @@
+body{
+    font-family:Roboto, Arial, sans-serif
+}
+h1{
+    font-family:'Josefin Slab', Arial, sans-serif;
+    text-transform:uppercase
+}
+h2{}
+h3{}
+
+nav .navbar-collapse ul.navbar-nav > li.nav-item > a.nav-link{
+    color:#FFF;
+    text-transform:uppercase
+}
+.tp-nav-collapse{
+    background #ea967c
+}
+.banner-full {
+    height: 100vh;
+    background-image: url('/static/images/bg/banner-main-page.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner-full > div{
+    color:#FFF
+}
