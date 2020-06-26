@@ -63,7 +63,7 @@ header nav ul.navbar-nav > li.nav-item a.nav-link:hover{
 }
 /* Team */
 #team{
-    background-image: url('/static/images/bg/bamboo.png');
+    background-image: url('/static/images/bg/bamboo.jpg');
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -83,6 +83,11 @@ header nav ul.navbar-nav > li.nav-item a.nav-link:hover{
     font-size:.9em
 }
 
+/* Video */
+#video{
+    background-color:#fff0e2
+}
+
 /* Facility */
 #facility .img-wrapper{
     position:relative;
@@ -99,9 +104,14 @@ header nav ul.navbar-nav > li.nav-item a.nav-link:hover{
     border: 10px solid rgba(234, 150, 124, .35)
 }
 
-/* Video */
-#video{
-    background-color:#fff0e2
+/* Spiritual */
+#spiritual{
+    color:#fff;
+    background-image: url('/static/images/bg/spiritual.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .65)
 }
 
 /* Testimonials */
