@@ -14,33 +14,60 @@ p{
     font-weight:300
 }
 .wrapper{
-    border: 1px solid #ea967c;
-    width:15%
+    border-top: 2px solid #ea967c;
+    width:10%
 }
-
+.head{
+    color:#222;
+    font-weight:400;
+    text-transform:uppercase
+}
+.desc{
+    color:#969696;
+    font-size:.9em
+}
+.sub-title{
+    color:#969696;
+    font-size:.9em;
+    margin-bottom:0;
+    text-transform:uppercase
+}
 /* Header */
 header nav .navbar-collapse ul.navbar-nav > li.nav-item > a.nav-link{
-    color:#FFF;
+    color:#fff;
     text-transform:uppercase
+}
+header nav.navbar-dark .navbar-toggler{
+    color:#fff;
+    border:none
 }
 header .banner-full {
     height: 100vh;
-    background-image: url('/static/images/bg/banner-main-page.jpg');
+    background-image: url('/static/images/bg/banner-main-page-2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .55);
 }
+header .wrapper{
+    border-top: 1px solid #fff
+}
+header .login,
 header .banner-full > div{
-    color:#FFF
+    color:#fff
 }
-
+header h1 span,
+header button.login:hover,
+header nav ul.navbar-nav > li.nav-item a.nav-link:hover{
+    color:#ea967c
+}
 /* Team */
 #team{
     background-image: url('/static/images/bg/bamboo.png');
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, .85);
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, .85)
 }
 #team .col-md i{
     color:#ea967c;
@@ -55,9 +82,117 @@ header .banner-full > div{
     color:#969696;
     font-size:.9em
 }
-#team .lead{
-    color:#969696;
-    font-size:.9em;
-    margin-bottom:0;
-    text-transform:uppercase
+
+/* Facility */
+#facility .img-wrapper{
+    position:relative;
+    width:220px
 }
+#facility .img-wrapper:after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    border-radius:50%;
+    border: 10px solid rgba(234, 150, 124, .35)
+}
+
+/* Video */
+#video{
+    background-color:#fff0e2
+}
+
+/* Testimonials */
+#testimonials .head{
+    color:#ea967c;
+    font:600 .9em/1.1 'Josefin Slab', 'Roboto', Arial, sans-serif;
+}
+#testimonials i{
+    color: rgba(234, 150, 124, .25); 
+}
+
+/* Footer */
+footer .col-1 i{
+    color:#ea967c;
+    font-size:2.2em
+}
+footer .col-11 p.head{
+    color:#969696
+}
+@media (max-width: 992px) {
+    header nav.navbar{
+        background-color:#ea967c;
+        box-shadow: 1px 1px 15px rgba(234, 150, 124, .45);
+    }
+    .offcanvas-collapse {
+        position: fixed;
+        top: 75px; /* Height of navbar */
+        width: 100%;
+        padding: 1rem;
+        margin-left:-20px;
+        overflow-y: auto;
+        background-color: rgba(234, 150, 124, .95);
+        transition: -webkit-transform .3s ease-in-out;
+        transition: transform .3s ease-in-out;
+        transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+    .offcanvas-collapse.open {
+        margin:0;
+        -webkit-transform: translateX(-1rem);
+        transform: translateX(-1rem) /* Account for horizontal padding on navbar */
+    }
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden
+}
+
+.nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch
+}
+
+.nav-underline .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+    color: var(--secondary)
+}
+
+.nav-underline .nav-link:hover {
+    color: var(--blue)
+}
+
+.nav-underline .active {
+    font-weight: 500;
+    color: var(--gray-dark)
+}
+
+.text-white-50 { color: rgba(255, 255, 255, .5) }
+
+.bg-purple { background-color: var(--purple) }
+
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05) }
+
+.lh-100 { line-height: 1; }
+.lh-125 { line-height: 1.25; }
+.lh-150 { line-height: 1.5; }
