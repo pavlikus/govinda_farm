@@ -43,11 +43,11 @@ header nav.navbar-dark .navbar-toggler{
 }
 header .banner-full {
     height: 100vh;
-    background-image: url('/static/images/bg/banner-main-page-2.jpg');
+    background-image: url('/static/images/bg/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .55);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .7);
 }
 header .wrapper{
     border-top: 1px solid #fff
