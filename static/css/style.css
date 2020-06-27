@@ -61,6 +61,19 @@ header button.login:hover,
 header nav ul.navbar-nav > li.nav-item a.nav-link:hover{
     color:#ea967c
 }
+header nav{
+    transition: all 0.4s
+}
+.scroll-down header nav {
+    transform: translate3d(0, -100%, 0)
+}
+
+.scroll-up header nav {
+    color:#fff;
+    background-color:#ea967c;
+    box-shadow: 1px 1px 15px rgba(234, 150, 124, .45);
+    transform: none
+}
 /* Team */
 #team{
     background-image: url('/static/images/bg/bamboo.jpg');
@@ -132,10 +145,6 @@ footer .col-11 p.head{
     color:#969696
 }
 @media (max-width: 992px) {
-    header nav.navbar{
-        background-color:#ea967c;
-        box-shadow: 1px 1px 15px rgba(234, 150, 124, .45);
-    }
     .offcanvas-collapse {
         position: fixed;
         top: 75px; /* Height of navbar */
