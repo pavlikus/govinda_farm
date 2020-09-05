@@ -4,10 +4,17 @@ from flask import render_template
 from db import db_session
 from settings import Config
 
+from events.views import event
+
+from modules import storage
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
+storage.init_app(app)
+
+app.register_blueprint(event, url_prefix='/events/')
 
 @app.route('/')
 def hello_world():

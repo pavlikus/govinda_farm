@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for event in events %}
+<p>{{ event.name }}</p>
+<p>{{ event.date_start.strftime('%d %B') }} - {{ event.date_end.strftime('%d %B') }}</p>
+{% endfor %}
+{% endblock %}
