@@ -2,9 +2,11 @@ from flask import Flask
 from flask import render_template
 
 from db import db_session
+from settings import Config
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 
 @app.route('/')
