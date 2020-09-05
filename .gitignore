@@ -136,3 +136,6 @@ dmypy.json
 # Working test output file
 *.json
 *.csv
+
+# Base and data
+script.py
