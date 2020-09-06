@@ -1,15 +1,38 @@
-@media (max-width: 340px) {
+@media (min-width: 270px) {
     a.navbar-brand svg{
-        width:160px
+        width:120px
     }
-@media (max-width: 576px) {
+    header button.login{
+        height:2em;
+        width:2em
+    }
+    footer svg{
+        width:260px
+    }
+@media (min-width: 340px) {
+    a.navbar-brand svg{
+        width:180px
+    }
+    header button.login{
+        height:auto;
+        width:auto
+    }
+    footer svg{
+        width:320px
+    }
+@media (min-width: 576px) {
     a.navbar-brand svg{
         width:220px
     }
-    footer svg{
-        width:280px
-    }
 }
-@media (max-width: 768px) {}
+@media (min-width: 768px) {
+    a.navbar-brand svg{
+        width:auto
+    }
+    footer svg{
+        width:auto
+    }
+    
+}
 @media (max-width: 992px) {}
 @media (max-width: 1200px) {}

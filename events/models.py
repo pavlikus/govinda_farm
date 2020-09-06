@@ -1,6 +1,8 @@
+import enum
 from datetime import datetime
 
-from sqlalchemy import Column, Date, ForeignKey, Integer, String, Text
+from sqlalchemy import (Column, Date, Enum, ForeignKey,
+                        Integer, SmallInteger, String, Text)
 from sqlalchemy.orm import relationship
 
 from flask_image_alchemy.fields import StdImageField
@@ -8,6 +10,12 @@ from flask_image_alchemy.fields import StdImageField
 from modules import storage
 from db import Base
 from slugify import slugify
+
+
+class EventType(enum.Enum):
+
+    weekly = 'yoga weekend'
+    long_episodic = 'yoga retreats'
 
 
 class Event(Base):
@@ -23,7 +31,12 @@ class Event(Base):
     date_end = Column(Date)
     date_created = Column(Date, default=datetime.now())
 
-    gurus = relationship('Guru')
+    event_type = Column(Enum(EventType),
+                        nullable=False,
+                        default=EventType.weekly.name,
+                        server_default=EventType.weekly.name)
+    gurus = relationship('Guru', back_populates='event')
+    banners = relationship('Banner', back_populates='event')
 
     def __init__(self, *args, **kwargs):
         if 'slug' not in kwargs:
@@ -45,8 +58,24 @@ class Guru(Base):
                                      'thumbnail': {"width": 320, "height": 320, "crop": True}}))
 
     event_id = Column(ForeignKey('events.id'))
-    event = relationship('Event')
+    event = relationship('Event', back_populates='gurus')
 
     def __repr__(self):
         return f"""<Guru id={self.id}> name={self.appeal}
                     {self.first_name} {self.last_name} {self.dignity}>"""
+
+
+class Banner(Base):
+
+    __tablename__ = 'banners'
+    id = Column(Integer, primary_key=True)
+    title = Column(String(32))
+    image = Column(StdImageField(storage=storage,
+                                 variations={
+                                     'thumbnail': {"width": 640, "height": 428, "crop": True}}))
+
+    description = Column(Text)
+    sort_order = Column(Integer, default=0)
+
+    event_id = Column(Integer, ForeignKey('events.id'))
+    event = relationship('Event', back_populates='banners')

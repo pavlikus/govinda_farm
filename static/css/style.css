@@ -49,6 +49,9 @@ header .banner-full {
     background-repeat: no-repeat;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .6);
 }
+header #event-banner {
+    background-image: url('/static/images/bg/header-event.jpg');
+}
 header .wrapper{
     border-top: 1px solid #fff
 }
@@ -97,7 +100,7 @@ header nav{
 }
 
 /* Video */
-#video{
+#video, .color-bg{
     background-color:#fff0e2
 }
 

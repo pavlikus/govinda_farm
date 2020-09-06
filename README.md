@@ -1,3 +1,49 @@
+# The Govinda Farm
+
+![Logo](static/images/logo.png)
+
+## Description
+The Govinda Farm is a farm in the north of Thailand, set in a beautiful mountainous
+landscape among rice fields.
+
+* The project https://thegovindafarm.com introduces the visitor to yoga and meditation as a
+spiritual component of human life and provides an opportunity to participate in activities. For
+yoga teachers, there is the opportunity to organize a retreat with their group.
+* The main page describes the events and the venue in texts, photos, and videos. It also
+invites the visitor to register and receive e-mail newsletters with the latest news, updates,
+and discounts.
+* The Events page offers two types of events:
+    * Weekly events - yoga weekend
+    * Long episodic events - yoga retreats
+* Each of the Events pages contains a detailed description, time, price and
+registration form
+* The blog introduces visitors to the spiritual component of yoga
+* The contact form serves two purposes:
+    * For yoga teachers - to organize an event with their group
+    * For end-users - to clarify details and ask questions
+
+## Описание
+The Govinda Farm - это ферма на севере Тайланда, расположенная в красивом
+горном ландшафте среди рисовых полей.
+
+* Проект https://thegovindafarm.com знакомит посетителя с йогой и медитацией как с
+духовной составляющей жизни человека и дает возможность принять участие в
+мероприятиях. Для учителей йоги предлагается возможность организовать ретрит со
+своей группой.
+* Главная страница описывает мероприятия и место их проведения текстами,
+фотографиями и видео. Также предлагает посетителю зарегистрироваться и
+получать рассылку по электронной почте с последними новостями, обновлениями и
+скидками.
+* Страница Events предлагает два вида мероприятий:
+    * На еженедельной основе - yoga weekend
+    * И длительные эпизодические – yoga retreats
+* На каждой из страниц Events присутствует детальное описание, время, цена и
+форма для регистрации
+* Блог знакомит посетителей с духовной составляющей йоги.
+* Контактная форма преследует две цели:
+    * Учителям йоги - организовать мероприятие со своей группой
+    * Конечному пользователю - уточнить детали и прочее
+
 # Домашнее задание - Сайт "Мой блог"
 ## Цель:
 ### В этой самостоятельной работе тренируем умения:
