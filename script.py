@@ -108,3 +108,58 @@ with open('media/images/banner/thailand-vaisnava-festival.jpg', 'rb') as f:
     banner.event = event
     db.db_session.add(banner)
     db.db_session.commit()
+    
+description = """
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-12 my-auto">
+
+                <div class="row mt-sm-3 text-center justify-content-center">
+                    <h2>We Propose a New Kind of Vacation - Yoga Lifestyle Retreat</h2>
+                </div>
+                
+                <div class="row pt-2 pb-2 justify-content-center">
+                    <div class="col-auto wrapper"></div>
+                </div>
+                
+                <div class="row pt-2 pb-5 justify-content-center">
+                    <div class="col-8 text-center">
+                        <p class="lead text-uppercase sub-title">Forget stereotypes of yourself , follow yoga journey among the rice fields!</p>
+                    </div>
+                </div>
+                
+                <div class="row pt-2 pb-5 justify-content-center">
+                    <div class="col-10 text-center">
+                        <p>Suppose we are willing to look at behaviors, motivations, and strategies we habitually use to maintain our self-image. In that case, we can use Svadhyaya to pierce through the veil that this self-image creates and into the nature of our essential being.</p>
+
+                        <p>We start and finish these beautiful days in that divine sound, maha Mantra, the greatest sound which will free your mind from all undesirable things, to see the beauty and love all around... and introducing the most respected scripture Bhagavat Gita.</p>
+                        
+                        <p>During our Retreats you are welcome to join the authentic Chinese tea ceremony and nourish yourself with finest selection of teas, elevating you mind and heart!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>"""
+
+event = models.Event(title="Yoga Weekend",
+                     location="Govinda Farm, Chiang Mai, Thailand",
+                     event_type='weekly',
+                     description=description)
+db.db_session.add(event)
+db.db_session.commit()
+
+description = """
+<h3>Govinda Farm Yoga Weekend</h3>
+<p>Vibrations from people, tea and even upper world! There is something more beyond yoga...lets find it out!</p>
+<p>For information and reservation, please fill our <a href="/contact">contact form</a>.</p>"""
+
+with open('media/images/banner/govinda-farm-yoga-weekend.jpg', 'rb') as f:
+    banner = models.Banner()
+    banner.title = "Govinda Farm Yoga Weekend"
+    banner.description = description
+    banner.image = FileStorage(f)
+    banner.sort_order = 1
+    banner.event = event
+    db.db_session.add(banner)
+    db.db_session.commit()

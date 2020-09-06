@@ -2,7 +2,7 @@
 {% block title %}{{ event.title }} | {{ event.location }}{% endblock %}
 
 {% block h1 %}
-<div id="event-banner" class="banner-full">
+<div id="event-weekly-banner" class="banner-full">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
@@ -17,7 +17,9 @@
                 <div class="row">
                     <div class="col">
                         <p class="lead font-weight-normal">{{ event.location }}</p>
+                        {% if event.date_start %}
                         <p class="lead font-weight-normal">{{ event.date_start.strftime('%d %B') }} - {{ event.date_end.strftime('%d %B') }}</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -27,29 +29,39 @@
 {% endblock %}
 
 {% block content %}
-<section id="guru">
+<section id="weekly-annonce">
     <div class="container">
         <div class="row py-5">
             <div class="col-12 my-auto">
 
-                <div class="row mt-5 mb-2 text-center justify-content-center ">
-                    <h2>Guru's</h2>
+                <div class="row mt-5 mb-2 text-center justify-content-center">
+                    <h2>Join us for a unique blissful spiritual retreat!</h2>
                 </div>
                 
-                <div class="row pt-2 pb-2 mb-5 justify-content-center">
+                <div class="row pt-2 pb-2 mb-3 justify-content-center">
                     <div class="col-auto wrapper"></div>
                 </div>
                 
-                <div class="row pt-2 pb-2 justify-content-center ">
-                {% for guru in event.gurus %}
-                    <div class="col-md-4 col-sm-12">
-                        <div class="avatar text-center">
-                            <img src="/{{ guru.image.thumbnail.url }}" class="border-0 rounded-circle" width="320" height="320" alt="{{ guru.first_name }} {{ guru.last_name }}">
-                        </div>
-                        <p class="pt-2 pb-0 mt-3 mb-0 px-5 text-center">{{ guru.appeal }} {{ guru.first_name }}</p>
-                        <p class="pb-3 px-5 text-center">{{ guru.last_name }} {{ guru.dignity }}</p>
+                <div class="row pt-2 pb-2 text-center justify-content-center">
+                    <div class="col-md-9 col-sm-12">
+                        <p class="lead sub-title">Founded by a senior Bhakti Yoga teacher/oriental art expert, we share a full fledged healthy lifestyle in nature, yoga, mantra chanting, mediation, and vegetarian food.</p>
                     </div>
-                {% endfor %}
+                </div>
+                
+                <div class="row py-5">
+
+                    <div class="col-md-4 col-sm-12 pb-3 text-center my-auto">
+                        <img src="{{ url_for('static', filename='images/content/weekly-1.jpg') }}" class="border-0 rounded-circle img-fluid" width="320" height="320" alt>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-12 pb-3 text-center img-center position-relative">
+                        <img src="{{ url_for('static', filename='images/content/weekly-2.jpg') }}" class="rounded-circle position-relative" width="560" height="560" alt>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-12 pb-3 text-center my-auto">
+                        <img src="{{ url_for('static', filename='images/content/weekly-3.jpg') }}" class="border-0 rounded-circle img-fluid" width="320" height="320" alt>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -62,13 +74,13 @@
 
 {% for banner in event.banners %}
 <section id="banner-{{ loop.index }}" {% if loop.index%2 %} class="color-bg" {% endif %}>
-        <div class="container-fluid pt-5 pb-2">
+        <div class="container-fluid py-5">
 
           <div class="row py-5">
             {% if loop.index%2 %}
             <div class="col-md-6 col-sm-12 my-auto">
                 <div class="row py-5 justify-content-center">
-                    <div class="col-md-10 col-sm-12">
+                    <div class="col-md-9 col-sm-12">
                         {{ banner.description|safe }}
                     </div>
                 </div>
@@ -97,33 +109,21 @@
 </section>
 {% endfor %}
 
-<section id="contact-info">
-    <div class="container pt-2 pb-5">
+<section id="event-gallery">
+    <div class="container-fluid py-5">
+        <div class="row py-5">
 
-            <div class="row mt-5 mb-2 text-center justify-content-center ">
-                <h2>Contact Info</h2>
+            <div class="col-lg-4 col-md-12 text-center justify-content-center">
+                <img src="{{ url_for('static', filename='images/content/gallery-1.jpg') }}" class="img-fluid" alt>
             </div>
-            
-            <div class="row pt-2 pb-2 mb-5 justify-content-center">
-                <div class="col-auto wrapper"></div>
+
+            <div class="col-lg-4 col-md-12 text-center justify-content-center">
+                <img src="{{ url_for('static', filename='images/content/gallery-2.jpg') }}" class="img-fluid" alt>
             </div>
-            
-            <div class="row">
 
-                <div class="col-lg-4 col-md-12 text-center justify-content-center">
-                    <p>Paramananda Das</p>
-                    <p><a href="mailto:devagati@gmail.com">devagati@gmail.com</a></p>
-                </div>
-
-                <div class="col-lg-4 col-md-12 text-center justify-content-center">
-                    <p>Kesavananda Das</p>
-                    <p><a href="mailto:kesavanandadas@gmail.com">kesavanandadas@gmail.com</a></p>
-                </div>
-
-                <div class="col-lg-4 col-md-12 text-center justify-content-center">
-                    <p>Abhinava Sundar Das (FOR AUSTRALIA)</p>
-                    <p><a href="mailto:abhinavasundar@gmail.com">abhinavasundar@gmail.com</a></p>
-                </div>
+            <div class="col-lg-4 col-md-12 text-center justify-content-center">
+                <img src="{{ url_for('static', filename='images/content/gallery-3.jpg') }}" class="img-fluid" alt>
+            </div>
 
         </div>
     </div>

@@ -9,6 +9,7 @@
     footer svg{
         width:260px
     }
+}
 @media (min-width: 340px) {
     a.navbar-brand svg{
         width:180px
@@ -20,6 +21,8 @@
     footer svg{
         width:320px
     }
+}
+
 @media (min-width: 576px) {
     a.navbar-brand svg{
         width:220px
@@ -32,7 +35,19 @@
     footer svg{
         width:auto
     }
-    
 }
-@media (max-width: 992px) {}
+@media (max-width: 768px) {
+    .img-center img {
+        border:0;
+        margin: auto;
+        height: auto;
+        max-width: 100%
+    }
+}
+@media (max-width: 992px) {
+    .img-center img {
+        height: auto;
+        width: 360px
+    }
+}
 @media (max-width: 1200px) {}

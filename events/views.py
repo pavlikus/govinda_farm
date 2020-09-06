@@ -1,8 +1,8 @@
-from flask import abort
 from flask import Blueprint
+from flask import abort
 from flask import render_template
 
-from .models import Event, Guru
+from .models import Event
 
 event = Blueprint('events', __name__)
 
