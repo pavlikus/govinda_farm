@@ -9,6 +9,9 @@
     footer svg{
         width:260px
     }
+    .offcanvas-collapse {
+        top:55px
+    }
 }
 @media (min-width: 340px) {
     a.navbar-brand svg{
@@ -35,6 +38,11 @@
     footer svg{
         width:auto
     }
+    .offcanvas-collapse {
+        top:64px;
+        width:-webkit-fill-available
+    }
+    
 }
 @media (max-width: 768px) {
     .img-center img {
@@ -42,6 +50,9 @@
         margin: auto;
         height: auto;
         max-width: 100%
+    }
+    .offcanvas-collapse {
+        top:80px
     }
 }
 @media (max-width: 992px) {

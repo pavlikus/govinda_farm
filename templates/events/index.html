@@ -31,13 +31,12 @@
         </div>
         <div class="row py-5">
         {% for event in events %}
-            <div class="event col-lg-6 col-md-12 mb-3">
-                <img class="img-fluid" src="/{{ event.image.thumbnail.url }}" alt="{{ event.title }}">
+            <div class="event col-lg-4 col-md-12 mb-3">
+                <img class="img-fluid mb-3" src="/{{ event.image.thumbnail.url }}" alt="{{ event.title }}">
                 <p class="lead text-uppercase"><a href="{{ url_for('events.event_page', slug=event.slug) }}">{{ event.title }}</a></p>
                 {% if event.date_start %}
                 <p class="small">{{ event.date_start.strftime('%d %B') }} - {{ event.date_end.strftime('%d %B') }}</p>
                 {% endif %}
-                </div>
             </div>
         {% endfor %}
         </div>
