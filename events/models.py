@@ -26,6 +26,10 @@ class Event(Base):
     title = Column(String(64))
     location = Column(String(64))
     description = Column(Text)
+    image = Column(StdImageField(storage=storage,
+                                 variations={
+                                     'thumbnail': {"width": 640, "height": 428, "crop": True}}))
+
     slug = Column(String(256), unique=True)
     date_start = Column(Date)
     date_end = Column(Date)
