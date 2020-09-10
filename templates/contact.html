@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
+{% block h1 %}
+<div id="contact-banner" class="banner banner-half">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="font-weight-bold mb-0">Contact Us</h1>
+                    </div>
+                </div>
+                <div class="row py-4 justify-content-center">
+                    <div class="col-auto wrapper"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="lead font-weight-normal">Lorem Ipsum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% if request.args['success'] %}
+<div class="alert alert-success" role="alert">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-sm-12 text-center">Your message is sent!<br />We will contact you soon</div>
+    </div>
+</div>
+{% endif %}
+<section id="contact">
+    <div class="container py-5">
+        <div class="row mt-5 mb-2 text-center justify-content-center">
+            <h2>Contact Form</h2>
+        </div>
+        <div class="row py-5 justify-content-center">
+            <div class="col-lg-10 col-sm-12">
+                <form id="contact-form" method="POST">
+                    {% for field in form %}
+                    {% if field.name != 'csrf_token' %}
+                    <div class="form-group">
+                        {{ field.label(class='control-label') }}
+                        {{ field(class='form-control') }}
+                        {% if field.errors %}
+                        <ul class="errors list-unstyled">
+                            {% for error in field.errors %}
+                            <li class="alert alert-warning my-2">{{ field.short_name }} {{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {{ form.csrf_token }}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+</section>
+{% endblock %}

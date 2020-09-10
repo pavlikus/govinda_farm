@@ -30,6 +30,9 @@
     a.navbar-brand svg{
         width:220px
     }
+    .offcanvas-collapse {
+        top:64px
+    }
 }
 @media (min-width: 768px) {
     a.navbar-brand svg{
@@ -39,7 +42,7 @@
         width:auto
     }
     .offcanvas-collapse {
-        top:64px;
+        top:80px;
         width:-webkit-fill-available
     }
     
@@ -50,9 +53,6 @@
         margin: auto;
         height: auto;
         max-width: 100%
-    }
-    .offcanvas-collapse {
-        top:80px
     }
 }
 @media (max-width: 992px) {

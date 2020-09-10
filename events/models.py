@@ -15,7 +15,7 @@ from slugify import slugify
 class EventType(enum.Enum):
 
     weekly = 'yoga weekend'
-    long_episodic = 'yoga retreats'
+    long_episodic = 'yoga retreat'
 
 
 class Event(Base):

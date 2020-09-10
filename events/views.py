@@ -12,7 +12,8 @@ def index():
 
     events = Event.query.all()
     return render_template('events/index.html',
-                           events=events)
+                           events=events,
+                           name='events')
 
 
 @event.route('/<slug>/')
@@ -22,4 +23,5 @@ def event_page(slug):
     if event is None:
         abort(404)
     return render_template(f"events/event_{event.event_type.name}.html",
-                           event=event)
+                           event=event,
+                           name='event')

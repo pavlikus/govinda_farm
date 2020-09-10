@@ -10,9 +10,10 @@ blog = Blueprint('blog', __name__)
 @blog.route('/')
 def index():
 
-    posts = Post.query.order_by(Post.date_created.desc()).all()
+    posts = Post.query.order_by(Post.date_created.desc())
     return render_template('blog/index.html',
-                           posts=posts)
+                           posts=posts,
+                           name='blog')
 
 
 @blog.route('/<slug>/')
@@ -22,4 +23,5 @@ def post(slug):
     if post is None:
         abort(404)
     return render_template(f"blog/post.html",
-                           post=post)
+                           post=post,
+                           name='post')

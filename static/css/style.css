@@ -68,6 +68,9 @@ header #event-weekly-banner {
 header #events-banner {
     background-image: url('/static/images/bg/header-events.jpg')
 }
+header #contact-banner {
+    background-image: url('/static/images/bg/header-contact.jpg')
+}
 header .wrapper{
     border-top: 1px solid #fff
 }
@@ -169,6 +172,13 @@ header nav.menu-color ul.navbar-nav > li.nav-item a.nav-link:hover,
     margin-bottom:5px
 }
 /* Footer */
+footer{
+    background-image: url('/static/images/bg/footer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, .75);
+}
 footer .col-1 i{
     color:#ea967c;
     font-size:2.2em
