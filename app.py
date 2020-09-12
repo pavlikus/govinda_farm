@@ -1,19 +1,23 @@
-from flask import Flask
-from flask import redirect, request, render_template, url_for
+from blog.views import blog
+
+from contact.forms import ContactForm
+from contact.models import Contact
 
 from db import db_session
-from settings import Config
 
-from blog.views import blog
 from events.views import event
 
-from contact.models import Contact
-from contact.forms import ContactForm
+from flask import Flask
+from flask import redirect, render_template, request, url_for
+
+from flask_security import SQLAlchemySessionUserDatastore, Security
+
 from modules import storage
 
-from flask_security import Security, SQLAlchemySessionUserDatastore
-from security.models import User, Role
 from security.forms import SecurityRegisterForm
+from security.models import Role, User
+
+from settings import Config
 
 
 app = Flask(__name__)

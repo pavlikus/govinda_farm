@@ -1,15 +1,17 @@
 import enum
 from datetime import datetime
 
-from sqlalchemy import (Column, Date, Enum, ForeignKey,
-                        Integer, SmallInteger, String, Text)
-from sqlalchemy.orm import relationship
+from db import Base
 
 from flask_image_alchemy.fields import StdImageField
 
 from modules import storage
-from db import Base
+
 from slugify import slugify
+
+from sqlalchemy import (Column, Date, Enum, ForeignKey,
+                        Integer, SmallInteger, String, Text)
+from sqlalchemy.orm import relationship
 
 
 class EventType(enum.Enum):
@@ -28,7 +30,9 @@ class Event(Base):
     description = Column(Text)
     image = Column(StdImageField(storage=storage,
                                  variations={
-                                     'thumbnail': {"width": 640, "height": 428, "crop": True}}))
+                                     'thumbnail': {"width": 640,
+                                                   "height": 428,
+                                                   "crop": True}}))
 
     slug = Column(String(256), unique=True)
     date_start = Column(Date)
@@ -59,7 +63,9 @@ class Guru(Base):
     dignity = Column(String(64), default='')
     image = Column(StdImageField(storage=storage,
                                  variations={
-                                     'thumbnail': {"width": 320, "height": 320, "crop": True}}))
+                                     'thumbnail': {"width": 320,
+                                                   "height": 320,
+                                                   "crop": True}}))
 
     event_id = Column(ForeignKey('events.id'))
     event = relationship('Event', back_populates='gurus')
@@ -72,14 +78,17 @@ class Guru(Base):
 class Banner(Base):
 
     __tablename__ = 'banners'
+
     id = Column(Integer, primary_key=True)
     title = Column(String(32))
     image = Column(StdImageField(storage=storage,
                                  variations={
-                                     'thumbnail': {"width": 640, "height": 428, "crop": True}}))
+                                     'thumbnail': {"width": 640,
+                                                   "height": 428,
+                                                   "crop": True}}))
 
     description = Column(Text)
-    sort_order = Column(Integer, default=0)
+    sort_order = Column(SmallInteger, default=0)
 
     event_id = Column(Integer, ForeignKey('events.id'))
     event = relationship('Event', back_populates='banners')

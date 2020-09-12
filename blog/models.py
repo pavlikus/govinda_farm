@@ -1,12 +1,14 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Date, Integer, String, Text
+from db import Base
 
 from flask_image_alchemy.fields import StdImageField
 
 from modules import storage
-from db import Base
+
 from slugify import slugify
+
+from sqlalchemy import Column, Date, Integer, String, Text
 
 
 class Post(Base):
@@ -18,7 +20,9 @@ class Post(Base):
     description = Column(Text)
     image = Column(StdImageField(storage=storage,
                                  variations={
-                                     'thumbnail': {"width": 320, "height": 240, "crop": True}}))
+                                     'thumbnail': {"width": 320,
+                                                   "height": 240,
+                                                   "crop": True}}))
 
     slug = Column(String(256), unique=True)
     date_created = Column(Date, default=datetime.now())

@@ -13,9 +13,9 @@ class VisitorType(enum.Enum):
 
 
 class Contact(Base):
-    
+
     __tablename__ = 'contacts'
-    
+
     id = Column(Integer, primary_key=True)
     name = Column(String(32))
     country = Column(String(32), default='')

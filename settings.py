@@ -13,4 +13,7 @@ class Config(object):
     SECURITY_PASSWORD_HASH = 'bcrypt'
     SECURITY_PASSWORD_SALT = '3qCxpW9BaSr-L2euG4xb0g'
     SECURITY_REGISTERABLE = True
+    SECURITY_LOGIN_URL = '/login/'
+    SECURITY_LOGOUT_URL = '/logout/'
+    SECURITY_REGISTER_URL = '/register/'
     SECURITY_SEND_REGISTER_EMAIL = False

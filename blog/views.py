@@ -22,6 +22,6 @@ def post(slug):
     post = Post.query.filter(Post.slug == slug).first()
     if post is None:
         abort(404)
-    return render_template(f"blog/post.html",
+    return render_template("blog/post.html",
                            post=post,
                            name='post')

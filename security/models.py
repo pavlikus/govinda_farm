@@ -1,9 +1,9 @@
 from db import Base
-from flask_security import UserMixin, RoleMixin
-from sqlalchemy import create_engine
-from sqlalchemy.orm import relationship, backref
-from sqlalchemy import (Boolean, DateTime, Column, Integer,
-                        String, ForeignKey)
+
+from flask_security import RoleMixin, UserMixin
+
+from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy.orm import backref, relationship
 
 
 class RolesUsers(Base):
