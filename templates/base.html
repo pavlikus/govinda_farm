@@ -79,13 +79,29 @@
             </li>
           </ul>
         </div>
-        <button class="btn navbar-nav login">
-          <svg class="bi bi-person-circle" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-            <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-          </svg>
-        </button>
+        {% if current_user.username %}
+        <div class="login col-md-auto d-none d-md-block">
+            Hi, {{ current_user.username }}
+        </div>
+        {% endif %}
+        <div class="dropdown">
+            <button class="btn navbar-nav login dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg class="bi bi-person-circle" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+            </svg>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% if current_user.is_authenticated %}
+                    <span class="dropdown-item">Hi, {{ current_user.username }}</span>
+                    <a class="dropdown-item" href="/logout">Log Out</a>
+                {% else %}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    <a class="dropdown-item" href="/register">Register</a>
+                {% endif %}
+            </div>
+        </div>
       </nav>
       {% block h1 %}
       <div class="banner">
@@ -199,6 +215,15 @@
               </div>
               <div class="col-11 d-flex align-items-center">
                 <p class="head mb-0">San Pa Yang, Muthi 3 50330, Thailand</p>
+              </div>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="s-icon col-auto ml-1">
+                <a href="https://www.facebook.com/The-govinda-farm-1129396207202390" target="_blank" rel="nooper nofollow"><i class="fab fa-facebook-square"></i></a>
+              </div>
+              <div class="s-icon col-auto">
+                <a href="https://www.instagram.com/thegovindafarm/" target="_blank" rel="nooper nofollow"><i class="fab fa-instagram-square"></i></a>
               </div>
             </div>
 

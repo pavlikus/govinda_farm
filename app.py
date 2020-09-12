@@ -7,14 +7,21 @@ from settings import Config
 from blog.views import blog
 from events.views import event
 
-from contact import Contact, ContactForm
+from contact.models import Contact
+from contact.forms import ContactForm
 from modules import storage
 
+from flask_security import Security, SQLAlchemySessionUserDatastore
+from security.models import User, Role
+from security.forms import SecurityRegisterForm
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 app.url_map.strict_slashes = True
+
+user_datastore = SQLAlchemySessionUserDatastore(db_session, User, Role)
+security = Security(app, user_datastore, register_form=SecurityRegisterForm)
 
 storage.init_app(app)
 
@@ -30,10 +37,9 @@ def home_page():
 @app.route('/contact/', methods=('GET', 'POST'))
 def contact_page():
     form = ContactForm()
-    if form.validate_on_submit():
-        data = form.data
-        del data['csrf_token']
-        contact = Contact(**data)
+    if request.method == 'POST' and form.validate_on_submit():
+        contact = Contact()
+        form.populate_obj(contact)
         db_session.add(contact)
         db_session.commit()
         return redirect(url_for('contact_page', success=True))
