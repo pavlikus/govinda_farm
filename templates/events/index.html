@@ -13,11 +13,6 @@
                 <div class="row py-4 justify-content-center">
                     <div class="col-auto wrapper"></div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="lead font-weight-normal">Lorem Ipsum</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -32,10 +27,12 @@
         <div class="row py-5">
         {% for event in events %}
             <div class="event col-lg-5 col-md-12 mb-3">
-                <img class="img-fluid mb-3" src="/{{ event.image.thumbnail.url }}" alt="{{ event.title }}">
+                <a href="{{ url_for('events.event_page', slug=event.slug) }}" title="{{ event.title }}"><img class="img-fluid mb-3" src="/{{ event.image.thumbnail.url }}" alt="{{ event.title }}"></a>
                 <p class="lead text-uppercase"><a href="{{ url_for('events.event_page', slug=event.slug) }}">{{ event.title }}</a></p>
                 {% if event.date_start %}
                 <p class="small">{{ event.date_start.strftime('%d %B') }} - {{ event.date_end.strftime('%d %B') }}</p>
+                {% else %}
+                <p class="small">every weekend</p>
                 {% endif %}
             </div>
         {% endfor %}

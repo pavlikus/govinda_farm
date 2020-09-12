@@ -16,7 +16,7 @@ class Post(Base):
     __tablename__ = 'posts'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String(64), unique=True)
+    title = Column(String(128), unique=True)
     description = Column(Text)
     image = Column(StdImageField(storage=storage,
                                  variations={

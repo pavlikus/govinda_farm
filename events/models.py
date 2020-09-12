@@ -80,7 +80,7 @@ class Banner(Base):
     __tablename__ = 'banners'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String(32))
+    title = Column(String(64))
     image = Column(StdImageField(storage=storage,
                                  variations={
                                      'thumbnail': {"width": 640,

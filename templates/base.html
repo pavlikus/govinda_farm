@@ -79,7 +79,7 @@
             </li>
           </ul>
         </div>
-        {% if current_user.username %}
+        {% if current_user.is_authenticated %}
         <div class="login col-md-auto d-none d-md-block">
             Hi, {{ current_user.username }}
         </div>
@@ -110,7 +110,7 @@
             <div class="col-12 text-center">
               <div class="row">
                 <div class="col">
-                  <h1 class="font-weight-bold mb-0">Welcome to <span>Govinda Farm</span></h1>
+                  <h1 class="font-weight-bold mb-0">Welcome to Govinda Farm</h1>
                 </div>
               </div>
               <div class="row py-4 justify-content-center">
@@ -187,7 +187,7 @@
                 <i class="tdc-font-tdmp tdc-font-tdmp-old-phone"></i>
               </div>
               <div class="col-11 d-flex align-items-center">
-                <p class="head mb-0">+66 89 126 1010</p>
+                <p class="desc mb-0">+66 89 126 1010</p>
               </div>
             </div>
 
@@ -196,7 +196,7 @@
                 <i class="tdc-font-tdmp tdc-font-tdmp-24h"></i>
               </div>
               <div class="col-11 d-flex align-items-center">
-                <p class="head mb-0">9:00 AM - 5:00 PM</p>
+                <p class="desc mb-0">9:00 AM - 5:00 PM</p>
               </div>
             </div>
 
@@ -205,7 +205,7 @@
                 <i class="tdc-font-tdmp tdc-font-tdmp-envelope-open"></i>
               </div>
               <div class="col-11 d-flex align-items-center">
-                <p class="head mb-0">thegovindafarm.cnx.th@gmail.com</p>
+                <p class="desc mb-0">thegovindafarm.cnx.th@gmail.com</p>
               </div>
             </div>
             
@@ -214,7 +214,7 @@
                 <i class="tdc-font-tdmp tdc-font-tdmp-location"></i>
               </div>
               <div class="col-11 d-flex align-items-center">
-                <p class="head mb-0">San Pa Yang, Muthi 3 50330, Thailand</p>
+                <p class="desc mb-0">San Pa Yang, Muthi 3 50330, Thailand</p>
               </div>
             </div>
             

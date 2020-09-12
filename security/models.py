@@ -30,8 +30,8 @@ class User(Base, UserMixin):
 
     id = Column(Integer, primary_key=True)
     email = Column(String(64), unique=True)
-    username = Column(String(128))
-    password = Column(String(32))
+    username = Column(String(64))
+    password = Column(String(128))
     last_login_at = Column(DateTime())
     current_login_at = Column(DateTime())
     last_login_ip = Column(String(128))
